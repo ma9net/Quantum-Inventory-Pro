@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+Quantum Inventory Pro
+Quantum Inventory Pro is a high-performance, enterprise-grade admin dashboard designed for seamless inventory management. Built with React 19 and TypeScript, this project implements modern architectural patterns, focusing on scalability, type safety, and a premium user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Key Features
+🔐 Authentication Flow: Secure login/logout system (Mocked) with protected routing.
 
-Currently, two official plugins are available:
+📦 Inventory Management: Full CRUD operations for products with real-time UI updates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚡ Data Synchronization: Efficient server-state management using TanStack Query (v5).
 
-## React Compiler
+🎨 Enterprise UI: Polished interface powered by Ant Design (v5).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🏗️ Feature-Based Architecture: Modular folder structure for better maintainability.
 
-## Expanding the ESLint configuration
+🛡️ Strict Type Safety: 100% TypeScript coverage for predictable and bug-free development.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🗄️ Global State: Lightweight and persistent state management using Zustand.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Project Structure
+The project follows a Feature-based architecture to ensure high modularity:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+src/
+├── api/             # Global Axios configuration & interceptors
+├── components/      # Shared atomic components (Buttons, Loaders, etc.)
+├── features/        # Business logic divided by modules
+│   ├── auth/        # Login, Logout, and User Session
+│   ├── inventory/   # Product list, Create, Edit, Delete
+│   └── dashboard/   # Analytics & Overview
+├── hooks/           # Custom global React hooks
+├── layouts/         # Shared page wrappers (MainLayout, AuthLayout)
+├── routes/          # Centralized route configuration
+├── store/           # Global state (Zustand)
+└── types/           # Global TypeScript definitions
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Getting Started
+Prerequisites
+Node.js: v18.0.0 or higher
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+npm or yarn
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Installation
+1. Clone the repository:
+   git clone https://github.com/your-username/Quantum-Inventory-Pro.git
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Navigate to the project directory:
+   cd Quantum-Inventory-Pro
+
+3. Install dependencies:
+   npm install
+
+4. Start the development server:
+   npm run dev
